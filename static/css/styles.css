@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+body {
+	/*background-color: rgba(0, 0, 0, 0);*/
+	background-color: rgb(123, 120, 121);
+	margin: 0px auto;
+	overflow: hidden;
+	color: white;
+}
+
+p, ul, li, .container, .row, .col {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	padding-inline-start: 0;
+}
+
+.container {
+	height: 100vh;
+	max-width: 100%;
+}
+
+.container>div {
+	width: 100%;
+}
+
+.section {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.leaderboard .session-info {
+	background-color: rgba(0, 0, 0, 0.9);
+	min-height: 80px;
+	border-top-right-radius: 8px;
+	box-sizing: border-box;
+	padding: 5px;
+}
+
+.leaderboard .session-info .hor-sep {
+	height: 2px;
+	width: 100%;
+	background: linear-gradient(to right,
+		rgba(255,255,255,0) 0%,
+		rgba(255,255,255,0) 20%,
+		rgba(255,255,255,0.75) 50%,
+		rgba(255,255,255,0) 80%,
+		rgba(255,255,255,0) 100%);
+}
+
+.leaderboard .session-info .session-info-state {
+	font-family: 'F1Wide';
+	font-size: 17pt;
+	letter-spacing: 2px;
+	width: 100%;
+	text-align: center;
+}
+
+.leaderboard .session-info .session-info-progress {
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 22pt;
+	line-height: 22pt;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.leaderboard .list {
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	padding: 0;
+	overflow: hidden;
+}
+
+.leaderboard .list li~li > div {
+	border-top: 1px solid rgba(3, 3, 10, 0.5);
+}
+
+.leaderboard .list .position-col {
+	-ms-flex: 0 0 32px;
+	flex: 0 0 32px;
+	max-width: 32px;
+	background-color: rgba(3, 3, 10, 0.9);
+	padding: 1px 2px 2px 2px;
+}
+
+.leaderboard .list .position-col span {
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: black;
+	font-family: 'F1Bold';
+	font-size: 11pt;
+	background-color: white;
+	padding: 2px;
+	border-bottom-right-radius: 5px;
+}
+
+.leaderboard .list .name-col {
+	-ms-flex: 0 0 calc(100% - 32px - 41.666667%);
+	flex: 0 0 calc(100% - 32px - 41.666667%);
+	max-width: calc(100% - 32px - 41.666667%);
+	background-color: rgba(3, 3, 10, 0.9);
+	padding: 4px;
+}
+
+.leaderboard .list .name-col span {
+	display: block;
+	
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 13pt;
+	font-weight: bold;
+	line-height: 13pt;
+	letter-spacing: 2px;
+
+	padding-left: 12px;
+	margin-left: 5px;
+	border-left: 4px solid lightgray;
+
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	text-transform: uppercase;
+}
+
+.leaderboard .list .extra-col {
+	background-color: rgba(0, 0, 10, 0.5);
+	border-color: rgba(0, 0, 10, 0.25);
+	padding: 4px;
+}
+
+.leaderboard .list .extra-col span {
+	display: block;
+
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 13pt;
+	font-weight: bold;
+	line-height: 13pt;
+	letter-spacing: 1px;
+	text-align: right;
+
+	padding-right: 3px;
+}
+
+span.smaller {
+	font-size: smaller;
+}
+
+.move-down {
+	animation-name: moveDown;
+	animation-duration: 0.5s;
+	animation-delay: 0;
+	animation-iteration-count: 1;
+	animation-fill-mode: none;
+}
+
+.move-up {
+	animation-name: moveUp;
+	animation-duration: 0.5s;
+	animation-delay: 0;
+	animation-iteration-count: 1;
+	animation-fill-mode: none;
+}
+
+@keyframes moveDown {
+	from { transform: translateY(0%) }
+	to   { transform: translateY(100%) }
+}
+@keyframes moveUp {
+	from { transform: translateY(0%) }
+	to   { transform: translateY(-100%) }
+}
+
+/*
+F1Regular and F1RegularItalic
+*/
+@font-face {
+	font-family: 'F1';
+	src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1Regular/Formula1-Regular.woff2") format("woff2"), url("/etc/designs/fom-website/fonts/F1Regular/Formula1-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'F1';
+	src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1RegularItalic/Formula1-Italic.woff2") format("woff2"), url("/etc/designs/fom-website/fonts/F1RegularItalic/Formula1-Italic.woff") format("woff");
+	font-weight: normal;
+	font-style: italic;
+}
+
+/*
+  F1Bold
+  */
+@font-face {
+	font-family: 'F1Bold';
+	src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1Bold/Formula1-Bold.woff2") format("woff2"), url("/etc/designs/fom-website/fonts/F1Bold/Formula1-Bold.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*
+  F1Black
+  */
+@font-face {
+	font-family: 'F1Black';
+	src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1Black/Formula1-Black.woff2") format("woff2"), url("/etc/designs/fom-website/fonts/F1Black/Formula1-Black.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*
+  F1Wide
+  */
+@font-face {
+	font-family: 'F1Wide';
+	src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1Wide/Formula1-Wide.woff2") format("woff2"), url("/etc/designs/fom-website/fonts/F1Wide/Formula1-Wide.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
